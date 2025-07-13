@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4e076431-b01f-420b-a4ec-71707224b68c" name="dinov2_us">
+        <fileTransfer accessType="SFTP" host="103.191.243.209" port="22" sshConfigId="f51757b4-9c8a-44d7-a320-2b94235c7ded" sshConfig="jason@103.191.243.209:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

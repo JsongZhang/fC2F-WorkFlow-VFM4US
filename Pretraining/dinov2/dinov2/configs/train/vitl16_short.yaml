@@ -1,0 +1,6 @@
+# this corresponds to the default config
+train:
+  dataset_path: /SZU_DATA/us-vfm/data/US_510K/US-RIM380K/us_380k_train/data
+  batch_size_per_gpu: 64
+student:
+  block_chunks: 4

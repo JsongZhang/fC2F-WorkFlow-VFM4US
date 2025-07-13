@@ -1,0 +1,76 @@
+## Configuration for DINOv2 training on US_VFM dataset
+#train:
+#  dataset_path: us380k:/SZU_DATA/us-vfm/data/US_510K/US-RIM380K/us_380k_train/data
+#  batch_size_per_gpu: 96
+#  num_workers: 8
+#  output_dir: /SZU_DATA/us-vfm/dinov2_output/
+#  seed: 42
+#  OFFICIAL_EPOCH_LENGTH: 10000  # Adjust based on dataset size
+#  epochs: 200
+#
+#evaluation:
+#  eval_period_iterations: 1000
+#
+#crops:
+#  global_crops_size: 224
+#  global_crops_scale: [0.4, 1.0]
+#  local_crops_number: 8
+#  local_crops_size: 96
+#  local_crops_scale: [0.05, 0.4]
+#
+#optim:
+#  lr: 0.0005
+#  weight_decay: 0.04
+#  weight_decay_end: 0.4
+#  freeze_last_layer_epochs: 1
+#  warmup_epochs: 10
+#  epochs: 200
+#  clip_grad: 3.0
+#  adamw_beta1: 0.9
+#  adamw_beta2: 0.999
+#
+#teacher:
+#  momentum_teacher: 0.996
+#  final_momentum_teacher: 1.0
+#  teacher_temp: 0.07
+#  warmup_teacher_temp: 0.04
+#  warmup_teacher_temp_epochs: 30
+#
+#student:
+#  patch_size: 16
+#  arch: "vit_base"  # Vision Transformer with patch size 16
+#MODEL:
+#  WEIGHTS: "/SZU_DATA/us-vfm/upstream_task/dinov2/vit_b_img21k_weights/vit_base_16_imagenet21k.pth"
+#
+# this corresponds to the default config
+train:
+  dataset_path: us380k:/SZU_DATA/us-vfm/data/US_510K/US-RIM380K/us_380k_train/data
+#  dataset_path: us380k:/SZU_DATA/us-vfm/data/US_510K/US-MTD120K/us_120k_train/data
+  batch_size_per_gpu: 1
+  num_workers: 8
+  output_dir: /SZU_DATA/us-vfm/dinov2_output_us380k/
+  seed: 42
+#  OFFICIAL_EPOCH_LENGTH: 10000  # Adjust based on dataset size
+  epochs: 200
+
+student:
+  block_chunks: 4
+  arch: "vit_base"  # Vision Transformer with patch size 16
+
+#  WEIGHTS: "/SZU_DATA/us-vfm/dinov2_output/checkpoint_124999.pth"
+
+MODEL:
+  WEIGHTS: "/SZU_DATA/us-vfm/upstream_task/dinov2/vit_b_img21k_weights/vit_base_16_imagenet21k.pth"
+  C2F: False
+
+optim:
+  lr: 1.0e-4
+  weight_decay: 0.04
+  weight_decay_end: 0.2
+#  freeze_last_layer_epochs: 1
+  warmup_epochs: 30
+  epochs: 200
+  clip_grad: 0.4
+  adamw_beta1: 0.9
+  adamw_beta2: 0.999
+
