@@ -1,7 +1,8 @@
 <h1>
   <img src="assets/probe.png" width="50" style="vertical-align: left; margin-right: 0px;">VFM4US: Clinician-Inspired Coarse-to-Fine Pretraining of Visual Foundation Model for Ultrasound Imaging
 </h1>
-*Jiansong Zhang, Wenting Chen, Yongjian Chen, Shunlan Liu, Yanli Wang, Yongji Wu, Guisong Liu, Xiaoling Luo, Yaning Han, Guorong Lyu and  Linlin Shen*
+
+Jiansong Zhang, Wenting Chen, Yongjian Chen, Shunlan Liu, Yanli Wang, Yongji Wu, Guisong Liu, Xiaoling Luo, Yaning Han, Guorong Lyu and  Linlin Shen
 
 This repository contains the official implementation of **VFM4US**, our ultrasound-specific visual foundation model trained using a coarse-to-fine self-supervised pretraining paradigm. The model aims to capture both organ-level and scan-plane-level semantics and generalizes well to various downstream ultrasound tasks.
 
